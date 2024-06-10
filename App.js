@@ -9,7 +9,7 @@ import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'reac
 
 import { CriarUsuario } from './src/screens/CriarUsuario';
 import { Login } from "./src/screens/Login";
-import { Sobre } from "./src/screens/Sobre"
+import   Sobre  from "./src/screens/Sobre"
 import { Cadastro} from "./src/screens/Cadastro"
 import Tasks from "./src/screens/Tasks";
 import  EditarTask from  "./src/screens/EditarTask";
@@ -42,6 +42,7 @@ export default function App() {
           <Stack.Screen name="Login" component={Login} options={{ title: 'Login'}}/>
           <Stack.Screen name="Tabs" component={Tabs} options={{ headerShown: false }} />
           <Stack.Screen name="EditarTask" component={EditarTask} options={{ title: 'Editar task'}} />
+          <Stack.Screen name="Sobre" component={Sobre} options={{ title: 'Sobre'}} />
 
 
     </Stack.Navigator>

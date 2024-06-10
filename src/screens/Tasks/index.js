@@ -14,6 +14,8 @@ export default function Tasks({ navigation }) {
 
     // Popup para remover tarefa
     const deleteTask = (id) => {
+        console.log( auth.currentUser.uid)
+
         return Alert.alert(
             "Excluir tarefa",
             "Você tem certeza que deseja remover uma tarefa?",
@@ -21,9 +23,8 @@ export default function Tasks({ navigation }) {
                 {
                     text: "Cancelar",
                 },
-                {
+                { 
                     text: "Confirmar",
-                    // Função que remove tarefa do banco quando o usuário clica na opção "Confirmar" do popup
                     onPress: () => remove(ref(db, 'tasks/' + auth.currentUser.uid + '/' + id))
                 }
             ]

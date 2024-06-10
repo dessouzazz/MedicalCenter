@@ -4,8 +4,8 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import styles from './style';
-
-
+import { getDatabase, ref, set } from "firebase/database";
+const db = getDatabase();
 export function CriarUsuario({ navigation }){
 
     const [nome, setNome] = useState("")
@@ -31,8 +31,11 @@ export function CriarUsuario({ navigation }){
       createUserWithEmailAndPassword(auth, email, senha)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log('Criou usuário....')
-        // ao criar vc colocu para navegar por uma 'Tabs' porém não existe essa Tabs declarada..
+        set(ref(db, 'users/' + user.uid), {
+          nome: nome,
+          email: email
+      });
+
         navigation.navigate('Login')
       })
       .catch((error) => {

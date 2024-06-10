@@ -35,6 +35,8 @@ export default function CreateTask({ navigation, route }) {
             date: date,
             motivo: motivo
         });
+
+        console.log(nome, date, motivo)
         navigation.navigate('Tabs')
     }
 

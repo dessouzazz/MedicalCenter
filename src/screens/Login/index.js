@@ -66,7 +66,7 @@ export function Login({ navigation }){
         <Text style={{color:'white', textAlign: 'center',}}>LOGIN!</Text>
       </TouchableOpacity>
 
-      <Text style={{color:'white', textAlign: 'center', marginTop: 20, fontSize:15}}>Já possui uma Conta? Clique no Botão abaixo</Text>
+      <Text style={{color:'white', textAlign: 'center', marginTop: 20, fontSize:15}}>Não possui uma Conta? Clique no Botão abaixo</Text>
 
       <TouchableOpacity onPress={() => navigation.navigate('CriarUsuario')} style={styles.btnRealizarLogin}>
         <Text style={{color:'white', textAlign: 'center',}}>Realizar Cadastro</Text>
